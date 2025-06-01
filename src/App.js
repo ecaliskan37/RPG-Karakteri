@@ -8,8 +8,17 @@ import Options from './components/Options'
 import Button from './components/Button'
 import attackOptionsList from './data/attackOptionsList'
 import namesList from './data/namesList'
+import { use } from 'react'
 
 export default function App() {
+  const [characterData, setCharacterData] = useState({
+    hat: false,
+    shield: true,
+    weapon: 'staff',
+    name: 'Wizard',
+    attackOptions: ['vur', 'kır', 'parçala', 'bol', 'yonet', 'derle'],
+    stats: { hp: 5, mp: 10, strength: 40 },
+  })
   /* Challenge
 
     Bu video oyunu karakter yaratıcısının bir başlangıç karakterine ihtiyacı var. Göreviniz aşağıdakileri yaparak bir tane oluşturmak: 
@@ -68,7 +77,7 @@ export default function App() {
   }
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <StatusBars characterData={dataToUse} />
 
       <Character characterData={dataToUse} />
